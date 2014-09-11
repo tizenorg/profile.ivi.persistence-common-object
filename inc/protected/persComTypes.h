@@ -23,6 +23,10 @@
 
 #include <stdbool.h>
 
+#ifdef _ISOC99_SOURCE
+#include <stdint.h>
+#endif
+
 #ifndef char_t
 typedef char char_t ;
 #endif
@@ -74,10 +78,12 @@ typedef __s16 INT16;
 typedef __s32 INT32;
 typedef __s64 INT64;
 
+#ifndef _ISOC99_SOURCE
 typedef __u8  uint8_t;
 typedef __u16 uint16_t;
 typedef __u32 uint32_t;
 typedef __u64 uint64_t;
+#endif
 
 /**
  * \brief 8 bit signed
